@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hello,World</title>
+  
+  
+  <link href="/atmol.xml" rel="self"/>
+  
+  <link href="http://blog.hangcheers.cn/"/>
+  <updated>2018-12-16T05:11:05.063Z</updated>
+  <id>http://blog.hangcheers.cn/</id>
+  
+  <author>
+    <name>Hang Yang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FAIR视觉论文集锦</title>
+    <link href="http://blog.hangcheers.cn/2018/12/16/loss/"/>
+    <id>http://blog.hangcheers.cn/2018/12/16/loss/</id>
+    <published>2018-12-16T03:16:45.916Z</published>
+    <updated>2018-12-16T05:11:05.063Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;FAIR在目标检测、实力分割等领域都做了创新。本篇博客从R-CNN到FPN到RetinaNet到Mask-RCNN做了一点归纳总结。&lt;/p&gt;
+&lt;h3 id=&quot;Faster-RCNN&quot;&gt;&lt;a href=&quot;#Faster-RCNN&quot; clas
+      
+    
+    </summary>
+    
+      <category term="论文笔记" scheme="http://blog.hangcheers.cn/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="入门" scheme="http://blog.hangcheers.cn/tags/%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Inception</title>
+    <link href="http://blog.hangcheers.cn/2018/12/16/hello-world/"/>
+    <id>http://blog.hangcheers.cn/2018/12/16/hello-world/</id>
+    <published>2018-12-16T00:13:23.328Z</published>
+    <updated>2018-12-16T05:10:30.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Inception系列有四篇重要的paper，分别是：&lt;a href=&quot;https://arxiv.org/abs/1409.4842&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Going Deeper with C
+      
+    
+    </summary>
+    
+      <category term="论文笔记" scheme="http://blog.hangcheers.cn/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="入门" scheme="http://blog.hangcheers.cn/tags/%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+</feed>
