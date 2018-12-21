@@ -6,7 +6,7 @@
   <link href="/atmol.xml" rel="self"/>
   
   <link href="http://blog.hangcheers.cn/"/>
-  <updated>2018-12-16T05:11:05.063Z</updated>
+  <updated>2018-12-21T13:43:44.289Z</updated>
   <id>http://blog.hangcheers.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LaTex Installation on OSX</title>
+    <link href="http://blog.hangcheers.cn/2018/12/19/latex-installation-on-OSX/"/>
+    <id>http://blog.hangcheers.cn/2018/12/19/latex-installation-on-OSX/</id>
+    <published>2018-12-19T05:52:55.000Z</published>
+    <updated>2018-12-21T13:43:44.289Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Latex在论文写作中用的比较多，比word好用不少。Latex最大的优势就是复杂公式的编辑与排版非常漂亮。今天记录一下在mac OSX环境下如何舒服的敲Latex。&lt;br&gt;解决方案：Sublime Text + MacTex + Skim  &lt;/p&gt;
+&lt;p&gt;MacTeX是
+      
+    
+    </summary>
+    
+      <category term="磨刀不误砍柴工" scheme="http://blog.hangcheers.cn/categories/%E7%A3%A8%E5%88%80%E4%B8%8D%E8%AF%AF%E7%A0%8D%E6%9F%B4%E5%B7%A5/"/>
+    
+    
+      <category term="工具" scheme="http://blog.hangcheers.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>FAIR视觉论文集锦</title>
