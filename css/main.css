@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #91ff1d;
+  background: #2d61ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2760,7 +2760,7 @@ pre .javascript .function {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #222;
+  background: #262a30;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -2998,7 +2998,7 @@ pre .javascript .function {
   }
 }
 body {
-  background: url("/images/memphis-colorful.png");
+  background: url("https://photo.16pic.com/00/52/44/16pic_5244555_b.jpg");
   background-attachment: fixed;
 }
 # 修改文章内文本连接样式,
