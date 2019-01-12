@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #017cff;
+  background: #91ff1d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2996,6 +2996,10 @@ pre .javascript .function {
   .post-body {
     text-align: justify;
   }
+}
+body {
+  background: url("/images/memphis-colorful.png");
+  background-attachment: fixed;
 }
 # 修改文章内文本连接样式,
 .post-body p a {
