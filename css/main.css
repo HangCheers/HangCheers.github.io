@@ -1616,8 +1616,8 @@ pre .javascript .function {
 .posts-expand .post-eof {
   display: block;
   margin: 80px auto 60px;
-  width: 8%;
-  height: 1px;
+  width: 80%;
+  height: 0px;
   background: #ccc;
   text-align: center;
 }
@@ -1748,6 +1748,9 @@ pre .javascript .function {
   max-width: 120px;
   height: auto;
   border: 1px solid #eee;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
 }
 .site-author-name {
   margin: 0;
@@ -1829,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2d61ff;
+  background: #ffe996;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3014,13 +3017,12 @@ body {
   border-bottom: 1px solid #fc6423;
   text-decoration: underline;
 }
-# 给文章增加阴影,
 .post {
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom: 60px;
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,203,0.5);
 }
 # 修改文章间分割线 .post-eof,
 .posts-expand .post-eof {
