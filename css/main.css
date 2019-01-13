@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffc9c1;
+  background: #fa991a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2994,7 +2994,7 @@ pre .javascript .function {
   }
 }
 body {
-  background: url("https://photo.16pic.com/00/52/44/16pic_5244555_b.jpg");
+  background: url("/images/weather.png");
   background-attachment: fixed;
 }
 # 修改文章内文本连接样式,
