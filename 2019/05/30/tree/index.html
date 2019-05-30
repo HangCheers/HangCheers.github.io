@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="工具,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -81,24 +81,17 @@
 
 
 
-<meta name="description" content="Latex在论文写作中用的比较多，比word好用不少。Latex最大的优势就是复杂公式的编辑与排版非常漂亮。今天记录一下在mac OSX环境下如何舒服的敲Latex。解决方案：Sublime Text + MacTex + Skim   MacTeX是TeXLive的Mac版，在http://www.tug.org/mactex/中下载MacTex.pkg。      安装完成后，会出现如下界面。">
-<meta name="keywords" content="工具">
+<meta name="description" content="这次整理的笔记主要内容是heap sort，但在说heap sort之前，先说一下树的结构和heap的结构。  Tree Data Structure Tree is hierachical data structure. 1234567/   &amp;lt;-- root  /      \...        home      /          \   ugrad        course">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LaTex Installation on OSX">
-<meta property="og:url" content="http://blog.hangcheers.cn/2018/12/19/latex-installation-on-OSX/index.html">
+<meta property="og:title" content="Sorting Algorithm（III)">
+<meta property="og:url" content="http://blog.hangcheers.cn/2019/05/30/tree/index.html">
 <meta property="og:site_name" content="Hello,World">
-<meta property="og:description" content="Latex在论文写作中用的比较多，比word好用不少。Latex最大的优势就是复杂公式的编辑与排版非常漂亮。今天记录一下在mac OSX环境下如何舒服的敲Latex。解决方案：Sublime Text + MacTex + Skim   MacTeX是TeXLive的Mac版，在http://www.tug.org/mactex/中下载MacTex.pkg。      安装完成后，会出现如下界面。">
+<meta property="og:description" content="这次整理的笔记主要内容是heap sort，但在说heap sort之前，先说一下树的结构和heap的结构。  Tree Data Structure Tree is hierachical data structure. 1234567/   &amp;lt;-- root  /      \...        home      /          \   ugrad        course">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://economistry.com/wp-content/uploads/2012/10/Screen-Shot-2012-10-15-at-4.00.47-PM.png">
-<meta property="og:image" content="http://blog.hangcheers.cn/img/s.png">
-<meta property="og:image" content="http://blog.hangcheers.cn/img/package.png">
-<meta property="og:image" content="http://blog.hangcheers.cn/img/package2.png">
-<meta property="og:image" content="http://blog.hangcheers.cn/img/skim.png">
-<meta property="og:updated_time" content="2019-01-13T11:28:32.078Z">
+<meta property="og:updated_time" content="2019-05-30T14:10:46.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LaTex Installation on OSX">
-<meta name="twitter:description" content="Latex在论文写作中用的比较多，比word好用不少。Latex最大的优势就是复杂公式的编辑与排版非常漂亮。今天记录一下在mac OSX环境下如何舒服的敲Latex。解决方案：Sublime Text + MacTex + Skim   MacTeX是TeXLive的Mac版，在http://www.tug.org/mactex/中下载MacTex.pkg。      安装完成后，会出现如下界面。">
-<meta name="twitter:image" content="http://economistry.com/wp-content/uploads/2012/10/Screen-Shot-2012-10-15-at-4.00.47-PM.png">
+<meta name="twitter:title" content="Sorting Algorithm（III)">
+<meta name="twitter:description" content="这次整理的笔记主要内容是heap sort，但在说heap sort之前，先说一下树的结构和heap的结构。  Tree Data Structure Tree is hierachical data structure. 1234567/   &amp;lt;-- root  /      \...        home      /          \   ugrad        course">
 
 
 
@@ -128,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.hangcheers.cn/2018/12/19/latex-installation-on-OSX/">
+  <link rel="canonical" href="http://blog.hangcheers.cn/2019/05/30/tree/">
 
 
 
 
 
-  <title>LaTex Installation on OSX | Hello,World</title>
+  <title>Sorting Algorithm（III) | Hello,World</title>
   
 
 
@@ -312,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hangcheers.cn/2018/12/19/latex-installation-on-OSX/">
+    <link itemprop="mainEntityOfPage" href="http://blog.hangcheers.cn/2019/05/30/tree/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hang Yang">
@@ -329,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LaTex Installation on OSX</h1>
+          <h1 class="post-title" itemprop="name headline">Sorting Algorithm（III)</h1>
         
 
         <div class="post-meta">
@@ -341,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T13:52:55+08:00">
-                2018-12-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-30T21:59:09+08:00">
+                2019-05-30
               </time>
             
 
@@ -357,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-13T19:28:32+08:00">
-                2019-01-13
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-30T22:10:46+08:00">
+                2019-05-30
               </time>
             
           </span>
@@ -412,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  242
+                  345
                 </span>
               
 
@@ -449,15 +442,25 @@
       
 
       
-        <p>Latex在论文写作中用的比较多，比word好用不少。Latex最大的优势就是复杂公式的编辑与排版非常漂亮。今天记录一下在mac OSX环境下如何舒服的敲Latex。<br>解决方案：Sublime Text + MacTex + Skim  </p>
-<p>MacTeX是TeXLive的Mac版，在<a href="http://www.tug.org/mactex/" target="_blank" rel="noopener">http://www.tug.org/mactex/</a>中下载MacTex.pkg。 </p>
-<p><img src="http://economistry.com/wp-content/uploads/2012/10/Screen-Shot-2012-10-15-at-4.00.47-PM.png" alt="1">   </p>
-<p>安装完成后，会出现如下界面。<br><img src="/img/s.png" alt="2"> </p>
-<p>Sublime Text 是编辑器，首先按「command + shift + P」来打开命令行，然后输入命令「Install Package」,按下Enter回车键。<br>在输入完成后，再输入“LaTex Tools”并安装。我们可以在安装package的过程中，可以打开console。Console一般在ST3的底部，用来查看安装的进程。  </p>
-<p><img src="/img/package.png" alt="3">. </p>
-<p><img src="/img/package2.png" alt="4"></p>
-<p>Skim是在OSX下面比较轻便的一个PDF阅读器。安装完阅读阅读器，需要「Sync」一下Sublime Text和Skim，如果下载的是Sublime Text3就选Sublime Text，如果是Sublime Text2就选择Sublime Text2。<br><img src="/img/skim.png" alt="4">  </p>
-<p>PS，<a href="https://www.latextemplates.com/cat/curricula-vitae" target="_blank" rel="noopener">LaTex Templates</a>上提供了很多简历模版，可以借鉴参考。</p>
+        <p>这次整理的笔记主要内容是heap sort，但在说heap sort之前，先说一下树的结构和heap的结构。</p>
+<ol>
+<li><p><strong>Tree Data Structure</strong></p>
+<p>Tree is hierachical data structure.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/   &lt;-- root</span><br><span class="line">  /      \</span><br><span class="line">...        home</span><br><span class="line">      /          \</span><br><span class="line">   ugrad        course</span><br><span class="line">    /          /    |    \</span><br><span class="line">  ...        cs101 cs112 cs113</span><br></pre></td></tr></table></figure>
+<p>像binary tree可以分为 fully binary tree / complete binary tree / balanced binary tree / binary search tree. 简单提及一下这些不同种类的binary tree的性质。Fully Binary Tree 每一个节点都有 0 / 2 个子节点; Balanced Binary Tree 的高度是 $log_2 n$ ; Binary Search Tree (BST)  的 left child 的值要小于root的值，right child 的值要大于root的值。</p>
+<p>下面👇看一下用代码实现树的构建以及遍历。</p>
+<p>常见的depth first traversal的方式有三种：in-order traversal (左子树、根节点、右子树) ， pre-order traversal (根节点、左子树、右子树) ，post-order traversal (左子树、右子树、根)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        self.left = <span class="keyword">None</span></span><br><span class="line">        self.right = <span class="keyword">None</span></span><br><span class="line">        self.val = key</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># tree traversal</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Inorder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> root:</span><br><span class="line">        Inorder(root.left)</span><br><span class="line">        print(root.val)</span><br><span class="line">        Inorder(root.right)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Postorder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> root:</span><br><span class="line">        Postorder(root.left)</span><br><span class="line">        Postorder(root.right)</span><br><span class="line">        print(root.val)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Preorder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> root:</span><br><span class="line">        print(root.val)</span><br><span class="line">        Preorder(root.left)</span><br><span class="line">        Preorder(root.right)</span><br></pre></td></tr></table></figure>
+<p>如果结合post-order和in-order两个arr[ ] 来构造一棵树，思路是。post[ ]的最后一个节点为root, 在in[ ]中找到root的index，root的左边都为左子树，右边都为右子树。类似下面，然后分别在左子树和右子树里面不断recursively。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">     	 1</span><br><span class="line">       /    \</span><br><span class="line">[4, 8, 2, 5]   [6, 3, 7]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p><strong>Heap</strong></p>
+</li>
+<li><p><strong>Heap Sort</strong></p>
+</li>
+</ol>
 
       
     </div>
@@ -483,12 +486,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/工具/" rel="tag"><i class-"fa="" fa-tag"=""></i>工具</a>
-          
-        </div>
-      
 
       
       
@@ -498,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/16/loss/" rel="next" title="FAIR视觉论文集锦">
-                <i class="fa fa-chevron-left"></i> FAIR视觉论文集锦
+              <a href="/2019/05/29/sorting algorithm/" rel="next" title="Sorting Algorithm（II)">
+                <i class="fa fa-chevron-left"></i> Sorting Algorithm（II)
               </a>
             
           </div>
@@ -507,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/13/plotting/" rel="prev" title="plotting">
-                plotting <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
