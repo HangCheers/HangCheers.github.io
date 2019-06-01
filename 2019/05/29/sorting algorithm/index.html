@@ -88,10 +88,13 @@
 <meta property="og:site_name" content="Hello,World">
 <meta property="og:description" content="1. Divide and Conquer Algorithm通常解决问题分为三步：1. Divide 把大问题拆解为同样类型的小问题 2. Conquer  recursivley解决这些小问题 3. Combine 把之前获得的子问题的解给结合起来。(所以通常a divide-and -conquer algorithm makes multiple recursive calls). 在so">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-01T12:44:37.832Z">
+<meta property="og:image" content="https://cdn.kastatic.org/ka-perseus-images/7da2ac32779bef669a6f05decb62f219a9132158.png">
+<meta property="og:image" content="https://cdn.kastatic.org/ka-perseus-images/21cd0d70813845d67fbb11496458214f90ad7cb8.png">
+<meta property="og:updated_time" content="2019-06-01T14:01:43.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sorting Algorithm（II)">
 <meta name="twitter:description" content="1. Divide and Conquer Algorithm通常解决问题分为三步：1. Divide 把大问题拆解为同样类型的小问题 2. Conquer  recursivley解决这些小问题 3. Combine 把之前获得的子问题的解给结合起来。(所以通常a divide-and -conquer algorithm makes multiple recursive calls). 在so">
+<meta name="twitter:image" content="https://cdn.kastatic.org/ka-perseus-images/7da2ac32779bef669a6f05decb62f219a9132158.png">
 
 
 
@@ -350,7 +353,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-01T20:44:37+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-01T22:01:43+08:00">
                 2019-06-01
               </time>
             
@@ -405,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  934
+                  980
                 </span>
               
 
@@ -472,7 +475,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   quickSort( arr[ ], start_idx, end_idx)</span><br><span class="line">&#123;</span><br><span class="line">   	<span class="keyword">if</span> ( start_idx &lt; end_idx)</span><br><span class="line"></span><br><span class="line">   		pivot = partition(arr, start_idx, end_idx) </span><br><span class="line"></span><br><span class="line">   		quickSort(arr, start_idx, pivot - <span class="number">1</span>) </span><br><span class="line"></span><br><span class="line">   		qucikSort(arr, pivot + <span class="number">1</span>, high)</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>我们再来进行一下time complexity的分析～ its worst-case running time is as bad as selection sort’s and insertion sort’s:  $O(n^2 )$ 但是quick sort的average-case running time 是和merge-sort一样的，都是$O(nlg n)$. <u>In practice, quicksorts outperforms merge sort.</u></p>
+<p>我们再来进行一下time complexity的分析～ its worst-case running time is as bad as selection sort’s and insertion sort’s:  $O(n^2 )$ 。参考可汗学院的algorithm教程，我们可以知道worst-case就是the most unbalanced partitions 。如下图所示。</p>
+<p><img src="https://cdn.kastatic.org/ka-perseus-images/7da2ac32779bef669a6f05decb62f219a9132158.png" alt="worst"></p>
+<p>同理，best case occurs when the partitions are evenly balanced as possible. 如下图所示。</p>
+<p><img src="https://cdn.kastatic.org/ka-perseus-images/21cd0d70813845d67fbb11496458214f90ad7cb8.png" alt="1"></p>
+<p>但是quick sort的average-case running time 是和merge-sort一样的，都是$O(nlg n)$. <u>In practice, quicksorts outperforms merge sort.</u></p>
 <ol>
 <li><h4 id="Difference-between-Merge-Sort-and-Quick-Sort"><a href="#Difference-between-Merge-Sort-and-Quick-Sort" class="headerlink" title="Difference between Merge Sort and Quick Sort"></a>Difference between Merge Sort and Quick Sort</h4><p>In Merge Sort,  divide 几乎没起到什么作用，主要起作用的部分是merge部分。「mergesort」就是在merge部分✅～</p>
 <p>In Quick Sort, merge 几乎没起到什么作用，主要起作用的部分是divide部分。「和pivot比较大小，从而分割」</p>
