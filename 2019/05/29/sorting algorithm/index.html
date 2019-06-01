@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hello,World">
 <meta property="og:description" content="1. Divide and Conquer Algorithm通常解决问题分为三步：1. Divide 把大问题拆解为同样类型的小问题 2. Conquer  recursivley解决这些小问题 3. Combine 把之前获得的子问题的解给结合起来。(所以通常a divide-and -conquer algorithm makes multiple recursive calls). 在so">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-29T06:17:03.937Z">
+<meta property="og:updated_time" content="2019-06-01T12:44:37.832Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sorting Algorithm（II)">
 <meta name="twitter:description" content="1. Divide and Conquer Algorithm通常解决问题分为三步：1. Divide 把大问题拆解为同样类型的小问题 2. Conquer  recursivley解决这些小问题 3. Combine 把之前获得的子问题的解给结合起来。(所以通常a divide-and -conquer algorithm makes multiple recursive calls). 在so">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-29T14:17:03+08:00">
-                2019-05-29
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-01T20:44:37+08:00">
+                2019-06-01
               </time>
             
           </span>
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  682
+                  934
                 </span>
               
 
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -462,6 +462,22 @@
 <p>Sorted_arr = [10, 14, 19, 27, 33, 35]</p>
 <p>附上python实现的代码 🤭</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mergeSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    print(<span class="string">"original array is"</span>, arr)</span><br><span class="line">    <span class="keyword">if</span> len(arr) &gt; <span class="number">1</span>:</span><br><span class="line">        mid = len(arr) // <span class="number">2</span></span><br><span class="line">        lefthalf = arr[:mid]</span><br><span class="line">        righthalf = arr[mid:]</span><br><span class="line">        mergeSort(lefthalf)</span><br><span class="line">        mergeSort(righthalf)</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; len(lefthalf) <span class="keyword">and</span> j &lt; len(righthalf):</span><br><span class="line">            <span class="keyword">if</span> lefthalf[i] &lt; righthalf[j]:</span><br><span class="line">                arr[k] = lefthalf[i]</span><br><span class="line">                i = i + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                arr[k] = righthalf[j]</span><br><span class="line">                j = j + <span class="number">1</span></span><br><span class="line">            k = k + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &lt; len(lefthalf):</span><br><span class="line">            arr[k] = lefthalf[i]</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">            k = k + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> j &lt; len(righthalf):</span><br><span class="line">            arr[k] = righthalf[j]</span><br><span class="line">            j = j + <span class="number">1</span></span><br><span class="line">            k = k + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"merging"</span>, arr)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><h4 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h4><p>首先要涉及到Pivot value的选择，因为Pivot value 和partition 有关，partition 又是 quick sort算法实现过程的核心。</p>
+<ul>
+<li>Always pick first element as pivot {只是为了简单化}</li>
+<li>Put <strong>pivot</strong> at its correct position in sorted array and put all smaller elements (smaller than pivot) before pivot, and put all greater elements (greater than pivot) after pivot. {Done in the linear time}</li>
+</ul>
+<p>然后我们来看一下quick sort的伪代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   quickSort( arr[ ], start_idx, end_idx)</span><br><span class="line">&#123;</span><br><span class="line">   	<span class="keyword">if</span> ( start_idx &lt; end_idx)</span><br><span class="line"></span><br><span class="line">   		pivot = partition(arr, start_idx, end_idx) </span><br><span class="line"></span><br><span class="line">   		quickSort(arr, start_idx, pivot - <span class="number">1</span>) </span><br><span class="line"></span><br><span class="line">   		qucikSort(arr, pivot + <span class="number">1</span>, high)</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我们再来进行一下time complexity的分析～ its worst-case running time is as bad as selection sort’s and insertion sort’s:  $O(n^2 )$ 但是quick sort的average-case running time 是和merge-sort一样的，都是$O(nlg n)$. <u>In practice, quicksorts outperforms merge sort.</u></p>
+<ol>
+<li><h4 id="Difference-between-Merge-Sort-and-Quick-Sort"><a href="#Difference-between-Merge-Sort-and-Quick-Sort" class="headerlink" title="Difference between Merge Sort and Quick Sort"></a>Difference between Merge Sort and Quick Sort</h4><p>In Merge Sort,  divide 几乎没起到什么作用，主要起作用的部分是merge部分。「mergesort」就是在merge部分✅～</p>
+<p>In Quick Sort, merge 几乎没起到什么作用，主要起作用的部分是divide部分。「和pivot比较大小，从而分割」</p>
+</li>
+</ol>
 
       
     </div>
@@ -671,7 +687,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Divide-and-Conquer-Algorithm"><span class="nav-number">1.</span> <span class="nav-text">1. Divide and Conquer Algorithm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Merge-Sort"><span class="nav-number">2.</span> <span class="nav-text">2. Merge Sort</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Divide-and-Conquer-Algorithm"><span class="nav-number">1.</span> <span class="nav-text">1. Divide and Conquer Algorithm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Merge-Sort"><span class="nav-number">2.</span> <span class="nav-text">2. Merge Sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Quick-Sort"><span class="nav-number">3.</span> <span class="nav-text">Quick Sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Difference-between-Merge-Sort-and-Quick-Sort"><span class="nav-number">4.</span> <span class="nav-text">Difference between Merge Sort and Quick Sort</span></a></li></ol></div>
             
 
           </div>
