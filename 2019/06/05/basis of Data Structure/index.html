@@ -90,7 +90,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.tutorialspoint.com/data_structures_algorithms/images/stack_push_operation.jpg">
 <meta property="og:image" content="https://www.tutorialspoint.com/data_structures_algorithms/images/stack_pop_operation.jpg">
-<meta property="og:updated_time" content="2019-06-05T12:04:11.558Z">
+<meta property="og:image" content="https://www.tutorialspoint.com/data_structures_algorithms/images/queue_enqueue_diagram.jpg">
+<meta property="og:image" content="https://www.tutorialspoint.com/data_structures_algorithms/images/queue_dequeue_diagram.jpg">
+<meta property="og:updated_time" content="2019-06-06T01:38:59.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆栈stack &amp; 队列queue">
 <meta name="twitter:description" content="Stack Stack ADT: A list with the restriction that insertion and deletion can be performed only from one end, called Top 举几个简单的例子来理解一下堆栈的property「 Last In First Out 」 食堂的餐盘，放在最上面的最先被拿走 以及 输入编辑器里面的Undo">
@@ -353,8 +355,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-05T20:04:11+08:00">
-                2019-06-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-06T09:38:59+08:00">
+                2019-06-06
               </time>
             
           </span>
@@ -408,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  346
+                  662
                 </span>
               
 
@@ -424,7 +426,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -457,15 +459,27 @@
 </li>
 </ol>
 <p>   <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/stack_pop_operation.jpg" alt="2"></p>
-<p>   然后我们再来看一下堆栈的应用，首先就是Depth First Search (DFS) 。</p>
-<p>   下面👇这段文字是参考这个<a href="https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm" target="_blank" rel="noopener">网站</a> 的。</p>
-<p>   DFS traverses a graph <u>in depthward motion</u> and uses a stack to <u>remember to get the next vertex to start a search</u> , when a dead end occurs in any iteration.</p>
+<p>   然后我们再来看一下堆栈的应用，</p>
+<p>   应用1: Infix Expression to Postfix Expression。「参考这个<a href="https://www.youtube.com/watch?v=vq-nUF0G4fI" target="_blank" rel="noopener">视频</a>进行整理哒」。</p>
+<p>   也就是把a op b 变成 ab，例如 opInfix: A + (B <em> C) - (D </em> E)    Postfix: ABC<em> + DE</em> -。但是在变化的过程中我们需要记住operator的precedence（优先级）1. parentheses （ ）{ } [ ]  2. Exponents (right to left)  3. * /  4. + / -</p>
+<p>   我们还是来看一下pseudo code</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">InfixToPostfix (exp) # exp: expression </span><br><span class="line">   &#123;</span><br><span class="line">	 create a stack S</span><br><span class="line">   	 res = [] # empty string</span><br><span class="line">	 for i in range(len(exp)):</span><br><span class="line">   	 		if exp[i] is operand:</span><br><span class="line">	 				res.append(exp[i]) </span><br><span class="line">   	 		if exp[i] is operator:</span><br><span class="line">   	 				&#123; while (!S.isEmpty() and HasHigherPrec(S.top(),exp[i])):</span><br><span class="line">   	 						&#123;</span><br><span class="line">                 	res.append(S.top())</span><br><span class="line">                 	S.pop()	</span><br><span class="line">   	 						&#125;</span><br><span class="line">   	 						S.push(exp[i])</span><br><span class="line">   	 				&#125;</span><br><span class="line">   	 		while (!S.isEmpty())：</span><br><span class="line">   	 				&#123;</span><br><span class="line">   	 					res.append(S.top())</span><br><span class="line">   	 					S.pop()			</span><br><span class="line">   	 				&#125;</span><br><span class="line">   	 return res	 		</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>   应用2: Depth First Search (DFS) 。「参考这个<a href="https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm" target="_blank" rel="noopener">网站</a> 进行整理哒」。</p>
+<p>   DFS traverses a graph <u>in depthward motion</u> and <strong>uses a stack</strong> to <u>remember to get the next vertex to start a search</u> , when a dead end occurs in any iteration.</p>
 <p>   Rule:    </p>
 <p>   Step 1: Visit the adjacent unvisited vertex. Mark it as visited, display it and push it in stack. Then we explore each adjacent vertex that is not included in the visited set.</p>
 <p>   Step 2: If no adjacent vertex is found, pop up a vertex from the stack. </p>
 <p>   Step 3: Repeat Step 1 &amp; Step 2 until the stack is empty.</p>
 <p>   然后我们再用python来实现一下dfs这个思想。</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># non-recursive</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs_iterative</span><span class="params">(graph, start)</span>:</span></span><br><span class="line">  	visited, stack = set(), [start]  <span class="comment"># set to keep track of visited vertices</span></span><br><span class="line">    <span class="keyword">while</span> stack:</span><br><span class="line">      	vertex = stack.pop()</span><br><span class="line">        <span class="keyword">if</span> vertex <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">          	visited.add(vertex)</span><br><span class="line">            stack.extend(graph[vertex] - visited)</span><br><span class="line">    <span class="keyword">return</span> visited</span><br><span class="line">  </span><br><span class="line"><span class="comment"># recursive </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs_recursive</span><span class="params">(graph, start, visited = None)</span>:</span></span><br><span class="line">  	<span class="keyword">if</span> visited <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">      	visited = set()</span><br><span class="line">    visited.add(start)</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> graph[start] - visited:</span><br><span class="line">      	dfs_recursive(graph, n, visited)</span><br><span class="line">    <span class="keyword">return</span> visited</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>Queue</p>
+<p>Queue ADT: <strong>a queue is open</strong> <strong>at both its end</strong>.{个人觉得这句话特别重要，stack只有一边开的，所以后面进来的先出去。而queue就不一样了，两边都是开的，所以也才有<strong>First In First Out</strong> 这个property}. One end is always used to insert data ，也就是rear or tail 这一端进行enqueue这个操作。The other is used to remove data，也就是front or head 这一端进行dequeue这个操作。举个生活中的例子：比如在机场外面打的士的时候，先来的先走呀～🐶</p>
+<p><img src="https://www.tutorialspoint.com/data_structures_algorithms/images/queue_enqueue_diagram.jpg" alt="2"></p>
+<p><img src="https://www.tutorialspoint.com/data_structures_algorithms/images/queue_dequeue_diagram.jpg" alt="3"></p>
+</li>
+</ol>
+<p>Breath First Search algorithm traverses a graph <u>in a breathward motion</u> and <strong>uses a queue</strong> to remember to get the next vertex to start a search, when a dead end occurs in any iteration.</p>
 
       
     </div>
