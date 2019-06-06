@@ -6,7 +6,7 @@
   <link href="/atmol.xml" rel="self"/>
   
   <link href="http://blog.hangcheers.cn/"/>
-  <updated>2019-06-06T07:23:59.684Z</updated>
+  <updated>2019-06-06T13:06:46.417Z</updated>
   <id>http://blog.hangcheers.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>堆栈stack &amp; 队列queue</title>
+    <title>堆栈stack &amp; 队列queue(I)</title>
     <link href="http://blog.hangcheers.cn/2019/06/05/basis%20of%20Data%20Structure/"/>
     <id>http://blog.hangcheers.cn/2019/06/05/basis of Data Structure/</id>
     <published>2019-06-05T10:20:26.126Z</published>
-    <updated>2019-06-06T07:23:59.684Z</updated>
+    <updated>2019-06-06T13:06:46.417Z</updated>
     
     <summary type="html">
     
@@ -44,7 +44,7 @@
     <link href="http://blog.hangcheers.cn/2019/05/30/tree/"/>
     <id>http://blog.hangcheers.cn/2019/05/30/tree/</id>
     <published>2019-05-30T13:59:09.135Z</published>
-    <updated>2019-06-02T08:40:25.180Z</updated>
+    <updated>2019-06-06T13:11:10.584Z</updated>
     
     <summary type="html">
     
@@ -53,7 +53,7 @@
         &lt;p&gt;这次整理的笔记主要内容是heap sort，但在说heap sort之前，先说一下树的结构和heap的结构。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Tree Data Structure&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Tree is hierachical da
+&lt;p&gt;数组、链表、堆栈、队列都是线性结构，而树🌲
       
     
     </summary>

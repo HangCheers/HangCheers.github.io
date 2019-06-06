@@ -83,7 +83,7 @@
 
 <meta name="description" content="Stack Stack ADT: A list with the restriction that insertion and deletion can be performed only from one end, called Top 举几个简单的例子来理解一下堆栈的property「 Last In First Out 」 食堂的餐盘，放在最上面的最先被拿走 以及 输入编辑器里面的Undo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="堆栈stack &amp; 队列queue">
+<meta property="og:title" content="堆栈stack &amp; 队列queue(I)">
 <meta property="og:url" content="http://blog.hangcheers.cn/2019/06/05/basis of Data Structure/index.html">
 <meta property="og:site_name" content="Hello,World">
 <meta property="og:description" content="Stack Stack ADT: A list with the restriction that insertion and deletion can be performed only from one end, called Top 举几个简单的例子来理解一下堆栈的property「 Last In First Out 」 食堂的餐盘，放在最上面的最先被拿走 以及 输入编辑器里面的Undo">
@@ -92,9 +92,9 @@
 <meta property="og:image" content="https://www.tutorialspoint.com/data_structures_algorithms/images/stack_pop_operation.jpg">
 <meta property="og:image" content="https://www.tutorialspoint.com/data_structures_algorithms/images/queue_enqueue_diagram.jpg">
 <meta property="og:image" content="https://www.tutorialspoint.com/data_structures_algorithms/images/queue_dequeue_diagram.jpg">
-<meta property="og:updated_time" content="2019-06-06T07:23:59.684Z">
+<meta property="og:updated_time" content="2019-06-06T13:06:46.417Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="堆栈stack &amp; 队列queue">
+<meta name="twitter:title" content="堆栈stack &amp; 队列queue(I)">
 <meta name="twitter:description" content="Stack Stack ADT: A list with the restriction that insertion and deletion can be performed only from one end, called Top 举几个简单的例子来理解一下堆栈的property「 Last In First Out 」 食堂的餐盘，放在最上面的最先被拿走 以及 输入编辑器里面的Undo">
 <meta name="twitter:image" content="https://www.tutorialspoint.com/data_structures_algorithms/images/stack_push_operation.jpg">
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>堆栈stack & 队列queue | Hello,World</title>
+  <title>堆栈stack & 队列queue(I) | Hello,World</title>
   
 
 
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">堆栈stack & 队列queue</h1>
+          <h1 class="post-title" itemprop="name headline">堆栈stack & 队列queue(I)</h1>
         
 
         <div class="post-meta">
@@ -355,7 +355,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-06T15:23:59+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-06T21:06:46+08:00">
                 2019-06-06
               </time>
             
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  811
+                  823
                 </span>
               
 
@@ -464,7 +464,7 @@
 <p>也就是把a op b 变成 ab op</p>
 <p>栗子🌰 Infix: A + B <em> C - D </em> E    Postfix: ABC<em> + DE</em> -</p>
 <p>栗子🌰 Infix: ((A + B)<em>C - D) </em> E   Postfix: AB+C<em> D - E</em>    </p>
-<p>堆栈里面的操作符（operator）的push和pop是和其precedence（优先级）相关。</p>
+<p>堆栈里面的操作符（operator）的push和pop是和其precedence（优先级）相关。通俗点讲就是先乘除后加减🐶</p>
 <p>用python来实现一下这个东西。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">class Stack:</span><br><span class="line"> def __init__(self):</span><br><span class="line">        self.items = []</span><br><span class="line">        self.length = 0</span><br><span class="line"></span><br><span class="line">    def push(self, val):</span><br><span class="line">        self.items.append(val)</span><br><span class="line">        self.length += 1</span><br><span class="line"></span><br><span class="line">    def empty(self):</span><br><span class="line">        return self.length == 0</span><br><span class="line"></span><br><span class="line">    def pop(self):</span><br><span class="line">        if self.empty():</span><br><span class="line">            return None</span><br><span class="line">        self.length -= 1</span><br><span class="line">        return self.items.pop()</span><br><span class="line"></span><br><span class="line">    def peek(self):</span><br><span class="line">        if self.empty():</span><br><span class="line">            return None</span><br><span class="line">        return self.items[0]</span><br><span class="line"></span><br><span class="line">    def __str__(self):</span><br><span class="line">     return str(self.items)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">precedence = &#123;&apos;*&apos;:3,&apos;/&apos;:3,&apos;+&apos;:2,&apos;-&apos;:2,&apos;(&apos;:1&#125;  # dict to store the operators # 数字越大，优先级越高</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def convert(expression):</span><br><span class="line">    print(__convert(expression.split()))</span><br><span class="line"></span><br><span class="line">def __convert(tokens):</span><br><span class="line">    stack = Stack()</span><br><span class="line">    res = []</span><br><span class="line">    for token in tokens:</span><br><span class="line">        if token.isalpha():</span><br><span class="line">            res.append(token)</span><br><span class="line">        elif token == &apos;(&apos;:</span><br><span class="line">            stack.push(token)</span><br><span class="line">        elif token == &apos;)&apos;:</span><br><span class="line">            while True:</span><br><span class="line">                temp = stack.pop()</span><br><span class="line">                if temp is None or temp == &apos;(&apos;:</span><br><span class="line">                    break</span><br><span class="line">                elif not temp.isalpha():</span><br><span class="line">                    res.append(temp)</span><br><span class="line">        else:</span><br><span class="line">            if not stack.empty():</span><br><span class="line">                temp = stack.peek()</span><br><span class="line">                while not stack.empty() and precedence[temp] &gt;= precedence[token] and token.isidentifier():</span><br><span class="line">                    res.append(stack.pop())</span><br><span class="line">                    temp = stack.peek()</span><br><span class="line">            stack.push(token)</span><br><span class="line"></span><br><span class="line">    while not stack.empty():</span><br><span class="line">        res.append(stack.pop())</span><br><span class="line">    return res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">convert(&quot;A * ( B + C ) + D&quot;)</span><br><span class="line"># [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;+&apos;, &apos;D&apos;, &apos;+&apos;, &apos;*&apos;]</span><br></pre></td></tr></table></figure>
 <p>   应用2: Depth First Search (DFS) 。「参考这个<a href="https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm" target="_blank" rel="noopener">网站</a> 进行整理哒」。</p>
