@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="行行找实习鸭,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="Pandas是Python里面专门用于数据分析的工具包。个人还蛮推荐这本e-book的Python for Data Analysis ～12345678import pandas as pdipl_data = &amp;#123;&apos;Team&apos;: [&apos;Riders&apos;, &apos;Riders&apos;, &apos;Devils&apos;, &apos;Devils&apos;, &apos;Kings&apos;,         &apos;kings&apos;, &apos;Kings&apos;, &apos;Ki">
+<meta name="description" content="今天总结以前上学期pattern recognition学的PCA ^ ^Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature space becomes">
+<meta name="keywords" content="行行找实习鸭">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pandas 之groupby 函数">
-<meta property="og:url" content="http://blog.hangcheers.cn/2019/06/17/data_analyst_3/index.html">
+<meta property="og:title" content="PCA">
+<meta property="og:url" content="http://blog.hangcheers.cn/2019/06/23/PCA/index.html">
 <meta property="og:site_name" content="Hello,World">
-<meta property="og:description" content="Pandas是Python里面专门用于数据分析的工具包。个人还蛮推荐这本e-book的Python for Data Analysis ～12345678import pandas as pdipl_data = &amp;#123;&apos;Team&apos;: [&apos;Riders&apos;, &apos;Riders&apos;, &apos;Devils&apos;, &apos;Devils&apos;, &apos;Kings&apos;,         &apos;kings&apos;, &apos;Kings&apos;, &apos;Ki">
+<meta property="og:description" content="今天总结以前上学期pattern recognition学的PCA ^ ^Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature space becomes">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-17T07:35:35.422Z">
+<meta property="og:updated_time" content="2019-06-23T12:31:41.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pandas 之groupby 函数">
-<meta name="twitter:description" content="Pandas是Python里面专门用于数据分析的工具包。个人还蛮推荐这本e-book的Python for Data Analysis ～12345678import pandas as pdipl_data = &amp;#123;&apos;Team&apos;: [&apos;Riders&apos;, &apos;Riders&apos;, &apos;Devils&apos;, &apos;Devils&apos;, &apos;Kings&apos;,         &apos;kings&apos;, &apos;Kings&apos;, &apos;Ki">
+<meta name="twitter:title" content="PCA">
+<meta name="twitter:description" content="今天总结以前上学期pattern recognition学的PCA ^ ^Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature space becomes">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.hangcheers.cn/2019/06/17/data_analyst_3/">
+  <link rel="canonical" href="http://blog.hangcheers.cn/2019/06/23/PCA/">
 
 
 
 
 
-  <title>pandas 之groupby 函数 | Hello,World</title>
+  <title>PCA | Hello,World</title>
   
 
 
@@ -305,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hangcheers.cn/2019/06/17/data_analyst_3/">
+    <link itemprop="mainEntityOfPage" href="http://blog.hangcheers.cn/2019/06/23/PCA/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hang Yang">
@@ -322,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pandas 之groupby 函数</h1>
+          <h1 class="post-title" itemprop="name headline">PCA</h1>
         
 
         <div class="post-meta">
@@ -334,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-17T15:27:32+08:00">
-                2019-06-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-23T20:20:34+08:00">
+                2019-06-23
               </time>
             
 
@@ -350,8 +351,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-17T15:35:35+08:00">
-                2019-06-17
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-23T20:31:41+08:00">
+                2019-06-23
               </time>
             
           </span>
@@ -405,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  513
+                  590
                 </span>
               
 
@@ -442,79 +443,43 @@
       
 
       
-        <p>Pandas是Python里面专门用于数据分析的工具包。个人还蛮推荐这本e-book的<a href="https://github.com/wesm/pydata-book" target="_blank" rel="noopener">Python for Data Analysis</a> ～<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">ipl_data = &#123;<span class="string">'Team'</span>: [<span class="string">'Riders'</span>, <span class="string">'Riders'</span>, <span class="string">'Devils'</span>, <span class="string">'Devils'</span>, <span class="string">'Kings'</span>,</span><br><span class="line">         <span class="string">'kings'</span>, <span class="string">'Kings'</span>, <span class="string">'Kings'</span>, <span class="string">'Riders'</span>, <span class="string">'Royals'</span>, <span class="string">'Royals'</span>, <span class="string">'Riders'</span>],</span><br><span class="line">         <span class="string">'Rank'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>,<span class="number">4</span> ,<span class="number">1</span> ,<span class="number">1</span>,<span class="number">2</span> , <span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>],</span><br><span class="line">         <span class="string">'Year'</span>: [<span class="number">2014</span>,<span class="number">2015</span>,<span class="number">2014</span>,<span class="number">2015</span>,<span class="number">2014</span>,<span class="number">2015</span>,<span class="number">2016</span>,<span class="number">2017</span>,<span class="number">2016</span>,<span class="number">2014</span>,<span class="number">2015</span>,<span class="number">2017</span>],</span><br><span class="line">         <span class="string">'Points'</span>:[<span class="number">876</span>,<span class="number">789</span>,<span class="number">863</span>,<span class="number">673</span>,<span class="number">741</span>,<span class="number">812</span>,<span class="number">756</span>,<span class="number">788</span>,<span class="number">694</span>,<span class="number">701</span>,<span class="number">804</span>,<span class="number">690</span>]&#125;</span><br><span class="line">df = pd.DataFrame(ipl_data)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(df)</span><br></pre></td></tr></table></figure>
-<pre><code>      Team  Rank  Year  Points
-0   Riders     1  2014     876
-1   Riders     2  2015     789
-2   Devils     2  2014     863
-3   Devils     3  2015     673
-4    Kings     3  2014     741
-5    kings     4  2015     812
-6    Kings     1  2016     756
-7    Kings     1  2017     788
-8   Riders     2  2016     694
-9   Royals     4  2014     701
-10  Royals     1  2015     804
-11  Riders     2  2017     690
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(df.groupby(<span class="string">'Team'</span>))</span><br></pre></td></tr></table></figure>
-<pre><code>&lt;pandas.core.groupby.groupby.DataFrameGroupBy object at 0x10be6c470&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(df.groupby(<span class="string">'Team'</span>).groups) <span class="comment"># 查看分组情况</span></span><br></pre></td></tr></table></figure>
-<pre><code>{&apos;Devils&apos;: Int64Index([2, 3], dtype=&apos;int64&apos;), &apos;Kings&apos;: Int64Index([4, 6, 7], dtype=&apos;int64&apos;), &apos;Riders&apos;: Int64Index([0, 1, 8, 11], dtype=&apos;int64&apos;), &apos;Royals&apos;: Int64Index([9, 10], dtype=&apos;int64&apos;), &apos;kings&apos;: Int64Index([5], dtype=&apos;int64&apos;)}
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grouped = df.groupby(<span class="string">'Team'</span>)</span><br><span class="line"><span class="comment"># 迭代遍历分组</span></span><br><span class="line"><span class="keyword">for</span> name_team,group <span class="keyword">in</span> grouped:</span><br><span class="line">    print(name_team)</span><br><span class="line">    print(group)</span><br></pre></td></tr></table></figure>
-<pre><code>Devils
-     Team  Rank  Year  Points
-2  Devils     2  2014     863
-3  Devils     3  2015     673
-Kings
-    Team  Rank  Year  Points
-4  Kings     3  2014     741
-6  Kings     1  2016     756
-7  Kings     1  2017     788
-Riders
-      Team  Rank  Year  Points
-0   Riders     1  2014     876
-1   Riders     2  2015     789
-8   Riders     2  2016     694
-11  Riders     2  2017     690
-Royals
-      Team  Rank  Year  Points
-9   Royals     4  2014     701
-10  Royals     1  2015     804
-kings
-    Team  Rank  Year  Points
-5  kings     4  2015     812
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(grouped.get_group(<span class="string">'Kings'</span>))</span><br></pre></td></tr></table></figure>
-<pre><code>    Team  Rank  Year  Points
-4  Kings     3  2014     741
-6  Kings     1  2016     756
-7  Kings     1  2017     788
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">print(grouped[<span class="string">'Points'</span>].agg([np.mean, np.sum]))</span><br></pre></td></tr></table></figure>
-<pre><code>              mean   sum
-Team                    
-Devils  768.000000  1536
-Kings   761.666667  2285
-Riders  762.250000  3049
-Royals  752.500000  1505
-kings   812.000000   812
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看每个分组的大小</span></span><br><span class="line">print(grouped.agg(np.size))</span><br></pre></td></tr></table></figure>
-<pre><code>        Rank  Year  Points
-Team                      
-Devils     2     2       2
-Kings      3     3       3
-Riders     4     4       4
-Royals     2     2       2
-kings      1     1       1
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># filter some data</span></span><br><span class="line">filter = df.groupby(<span class="string">'Team'</span>).filter(<span class="keyword">lambda</span> x: len(x) &gt;= <span class="number">3</span>)</span><br><span class="line">print(filter)</span><br></pre></td></tr></table></figure>
-<pre><code>      Team  Rank  Year  Points
-0   Riders     1  2014     876
-1   Riders     2  2015     789
-4    Kings     3  2014     741
-6    Kings     1  2016     756
-7    Kings     1  2017     788
-8   Riders     2  2016     694
-11  Riders     2  2017     690
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># conclude</span></span><br><span class="line"><span class="comment"># df.groupby 主要用于分割对象，应用函数「聚合，转换，过滤」等</span></span><br></pre></td></tr></table></figure>
+        <p>今天总结以前上学期pattern recognition学的PCA ^ ^<br><strong>Background of dimensionality reduction</strong></p>
+<ol>
+<li><p><strong>Curse of Dimenisonality</strong> : (1) Keep adding features — the dimensionality of the feature space grows — feature space becomes sparser —  it becomes much easier to find the perfect solution  —  overfitting — affect the predictability of the model —  the performance of model will decrease.  (2) Computational cost</p>
+</li>
+<li><p><strong>How</strong> :Dimensionality reduction — Project the data in the high-dimensionality to the fewer-dimensionality — remove reduant and irrelevant feature without incurring much loss of information — obtain a set of principal features  {so it can avoid overfitting and redundancy}</p>
+</li>
+<li><strong>Advantages</strong> : Visualization, Data Compression, Noise Removal</li>
+</ol>
+<p><u><strong>Mathematic Background:</strong></u></p>
+<ol>
+<li><p><strong>Variance</strong>:  Variance measures how spread the dataset is / how far each value in the dataset is from the mean. $$\sigma ^2 _x = var(x) = \sum (x_i - x_{mena})^2/N$$ </p>
+</li>
+<li><p><strong>Covariance</strong>: Covariance measures the how much two variables change together. Postive covariance means X and Y are positively related. i.e. as X increases Y also increases.  when the feature x and feature y are independent( or uncorrelated), then $$\sigma(x,y) = 0$$</p>
+<p>$$\sigma(x,y) = cov(XY) = \sum(x_i - x_{mean})(y_i - y_{mean})/N$$</p>
+</li>
+<li><p><strong>Covariance Matrix</strong>: $$C_{i,j} = \sigma(x_i,x_j)$$ where $$C \in R^{dXd}$$ and d is the dimension of random variables of the data. The covariance matrix with linear transformation is an important building block for understanding and using PCA, SVD, Bayes Classifier.</p>
+</li>
+<li><p><strong>Eigenvetors &amp; Eigenvalues</strong>:</p>
+<p>Eigen Decomposition:  $Ax = \lambda x$    $x$ is an eigenvector of A and $\lambda$ is the corresponding eigenvalue.</p>
+<p>We use Singular Value Decomposition (SVD) to decompose the covariance matrix then we can get eigenvalue and eigenvector. The eigenvectors are the unit vectors that represents <strong>the direction of the largest variance of the data</strong> while the eigenvalue represents <strong>the magnitude of this variance</strong> in the corresponding directions. The k-th largest eigenvalue of S is the variance of k-th PC.</p>
+</li>
+</ol>
+<p><strong><u>PCA:</u></strong> (it often used in feature engineering)</p>
+<ol>
+<li><p>Work-flow</p>
+<p>In ML problem, sometimes the features of our input are correlated. This means we include extra dimensions in our input data but we could convert the correlated features into orthogonal features to reduce the feature dimensionality. So we could also understand the correlation between new features is zero. So principal components is a set of values of linearly uncorrelated variables.</p>
+<p> PCA <strong>is based on the sample covariance</strong> ,  we compute the covariance matrix S ‘s eigenvector { <strong>the orthonormal basis for data,</strong> so each principal component orthogonal to all the previous ones}. <strong>Project the data to the orthonormal basis</strong> in this way we discard low significance dimensions, which greatly reduced the computational resources AND complexity.</p>
+<p>More specific, compute the PCs via SVD on <strong>the data centered data matrix</strong>. $$X_{d,n} = [(x_1 - \bar x),…,(x_n - \bar x)]$$  $$X_{d,n} = U_{d,d} D_{d,n} V_{n,n}^T$$ Then the first p eigenvectors forms  $$ G = [a_1, a_2, …. a_p]$$</p>
+<p>Project both training and testing data into the PCs space $$ y = G^T x$$ </p>
+</li>
+<li><p>How much (the number of components in PCA) is good enough to decide the performance of the predictive modeling?</p>
+<p>Decide a <strong><u>threshold (e.g. 0.95) of explained variance</u></strong>. If increasing one more principal components increases the explained variance by a large margin then go for it else stop it. Also check <strong><u>the accuracy of prediction with the included principal components.</u></strong> </p>
+</li>
+<li><p>In what situations is PCA not a good approach for dimensionality reduction?</p>
+<p>PCA is a <strong><u>linear transformation technique</u></strong>, if the features are non-linearly correlated.  PCA cannot capture non-linear structure.</p>
+</li>
+</ol>
 
       
     </div>
@@ -540,6 +505,12 @@ kings      1     1       1
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/行行找实习鸭/" rel="tag"><i class-"fa="" fa-tag"=""></i>行行找实习鸭</a>
+          
+        </div>
+      
 
       
       
@@ -549,8 +520,8 @@ kings      1     1       1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/05/basis of Data Structure/" rel="next" title="堆栈stack & 队列queue(I)">
-                <i class="fa fa-chevron-left"></i> 堆栈stack & 队列queue(I)
+              <a href="/2019/06/17/data_analyst_3/" rel="next" title="pandas 之groupby 函数">
+                <i class="fa fa-chevron-left"></i> pandas 之groupby 函数
               </a>
             
           </div>
@@ -558,10 +529,6 @@ kings      1     1       1
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/23/PCA/" rel="prev" title="PCA">
-                PCA <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
