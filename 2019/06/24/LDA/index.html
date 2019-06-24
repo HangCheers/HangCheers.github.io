@@ -90,7 +90,7 @@
 <meta property="og:description" content="Mathematics Background:  Scatter Matrix:It is common to use the correlation to understand the relation between two variables in data science tasks. A scatter matrix is a estimation of covariance matr">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://qph.fs.quoracdn.net/main-qimg-de0e3fbb98f88884fcc75f6488360602">
-<meta property="og:updated_time" content="2019-06-24T06:56:01.310Z">
+<meta property="og:updated_time" content="2019-06-24T06:59:03.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LDA">
 <meta name="twitter:description" content="Mathematics Background:  Scatter Matrix:It is common to use the correlation to understand the relation between two variables in data science tasks. A scatter matrix is a estimation of covariance matr">
@@ -353,7 +353,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-24T14:56:01+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-24T14:59:03+08:00">
                 2019-06-24
               </time>
             
@@ -462,7 +462,7 @@
 <p>LDA is a supervised technique of feature extraction used to find a linear combination of the availabel features to seperate the classes. LDA reduces the number of dimensions of the input feature vector <strong>by also considering the inter-class separation between classes</strong>.</p>
 <p>.<img src="https://qph.fs.quoracdn.net/main-qimg-de0e3fbb98f88884fcc75f6488360602" alt="1"></p>
 <p>The goal of Linear Discriminant Analysis is to find most discriminative projection by <strong>maximizing between-class distance</strong> { Distance between the centroids of the different classes }and <strong>minimizing within-class distance</strong> {Accumulated distance of an instance to the centroid of its class}.</p>
-<p><strong>Take an example</strong>: Two-class: we look for a projection where the same class are projected very close to each other and, at the same time, the projected means are as farther apart as possible. LDA is defined as a linear function $y = w^T x$ , to find the optimum $w^<em>$, we solve the generalized eigenvalue problem $$ S_w^{-1}S_B w =\lambda w$$ where $\lambda = J(w)=scalar$ yield $w^</em>$ is the eigenvector of $S_w^{-1}S_B$</p>
+<p><strong>Take an example</strong>: Two-class: we look for a projection where the same class are projected very close to each other and, at the same time, the projected means are as farther apart as possible. LDA is defined as a linear function $y = w^T x$ , to find the optimum $w^<em>$, we solve the generalized eigenvalue problem $$ S_w^{-1}S_B w =\lambda w$$ where $\lambda$ = J(w)=scalar yield $w^</em>$ is the eigenvector of $S_w^{-1}S_B$</p>
 <p>In multi-class problem, we seek (C-1) projections $[y_1,y_2,…,y_{c-1}]$, $y_i = w_i^Tx$</p>
 <p><strong>What is the difference between Naive Bayes and LDA?</strong></p>
 <p><strong>LDA</strong> operates on <strong>continuous-valued features</strong>, it assumes <strong>the examples within one-class are normally distributed</strong>. When extending for multiple predictors , LDA uses a multivariate Guassian Distribution for the class conditional density.  {the distribution of inputs &amp; how likely are each of the categories}</p>
