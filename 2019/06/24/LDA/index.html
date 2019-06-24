@@ -90,7 +90,7 @@
 <meta property="og:description" content="Mathematics Background:  Scatter Matrix:It is common to use the correlation to understand the relation between two variables in data science tasks. A scatter matrix is a estimation of covariance matr">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://qph.fs.quoracdn.net/main-qimg-de0e3fbb98f88884fcc75f6488360602">
-<meta property="og:updated_time" content="2019-06-24T06:59:03.763Z">
+<meta property="og:updated_time" content="2019-06-24T11:04:48.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LDA">
 <meta name="twitter:description" content="Mathematics Background:  Scatter Matrix:It is common to use the correlation to understand the relation between two variables in data science tasks. A scatter matrix is a estimation of covariance matr">
@@ -353,7 +353,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-24T14:59:03+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-24T19:04:48+08:00">
                 2019-06-24
               </time>
             
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  393
+                  487
                 </span>
               
 
@@ -448,25 +448,27 @@
         <ol>
 <li><strong>Mathematics Background</strong>:</li>
 </ol>
-<p><strong>Scatter Matrix</strong>:It is common to use the correlation to understand the relation between two variables in data science tasks. A scatter matrix is a estimation of covariance matrix when covariance cannot be calculated or costly to calculate.</p>
+<p>Scatter Matrix:It is common to use the correlation to understand the relation between two variables in data science tasks. A scatter matrix is a estimation of covariance matrix when covariance cannot be calculated or costly to calculate.</p>
 <p>$$ S = \sum_{k=1}^{n}(x_k - m)(x_k - m)^T$$ where m is the mean vector</p>
-<p> <strong>The class-specific mean vector</strong>: $$\mu_i =\frac{1}{n_i} \sum_{x\in C_{i}}x$$   </p>
-<p> <strong>The class-specific covariance matrix</strong> $S_i = \frac{1}{n_i}\sum_{x\in C_i}(x-\mu_i)(x - \mu_i)^T$  </p>
-<p> <strong>The total mean vecto</strong>r (sample) $\mu = \frac{1}{N}\sum X$ </p>
-<p> <strong>The within-class scatter</strong>: $S_w = \sum_{i=1}^{C}\frac{n_i}{N}S_i = \sum_{i=1}^{C}P_iS_i$ </p>
-<p> <strong>The between-class scatter</strong>: $S_B = \sum_{i=1}^{C}P_i(\mu_i-\mu)(\mu_i-\mu)^T$ </p>
-<p> <strong>Total covariance</strong>: $S_T = S_w + S_B$</p>
+<p> The class-specific mean vector: $$\mu_i =\frac{1}{n_i} \sum_{x\in C_{i}}x$$   </p>
+<p> The class-specific covariance matrix $S_i = \frac{1}{n_i}\sum_{x\in C_i}(x-\mu_i)(x - \mu_i)^T$  </p>
+<p> The total mean vector (sample) $\mu = \frac{1}{N}\sum X$ </p>
+<p> The within-class scatter: $S_w = \sum_{i=1}^{C}\frac{n_i}{N}S_i = \sum_{i=1}^{C}P_iS_i$ </p>
+<p> The between-class scatter: $S_B = \sum_{i=1}^{C}P_i(\mu_i-\mu)(\mu_i-\mu)^T$ </p>
+<p> Total covariance**: $S_T = S_w + S_B$</p>
 <ol start="2">
 <li><strong>LDA</strong>:</li>
 </ol>
 <p>LDA is a supervised technique of feature extraction used to find a linear combination of the availabel features to seperate the classes. LDA reduces the number of dimensions of the input feature vector <strong>by also considering the inter-class separation between classes</strong>.</p>
 <p>.<img src="https://qph.fs.quoracdn.net/main-qimg-de0e3fbb98f88884fcc75f6488360602" alt="1"></p>
 <p>The goal of Linear Discriminant Analysis is to find most discriminative projection by <strong>maximizing between-class distance</strong> { Distance between the centroids of the different classes }and <strong>minimizing within-class distance</strong> {Accumulated distance of an instance to the centroid of its class}.</p>
-<p><strong>Take an example</strong>: Two-class: we look for a projection where the same class are projected very close to each other and, at the same time, the projected means are as farther apart as possible. LDA is defined as a linear function $y = w^T x$ , to find the optimum $w^<em>$, we solve the generalized eigenvalue problem $$ S_w^{-1}S_B w =\lambda w$$ where $\lambda$ = J(w)=scalar yield $w^</em>$ is the eigenvector of $S_w^{-1}S_B$</p>
-<p>In multi-class problem, we seek (C-1) projections $[y_1,y_2,…,y_{c-1}]$, $y_i = w_i^Tx$</p>
-<p><strong>What is the difference between Naive Bayes and LDA?</strong></p>
-<p><strong>LDA</strong> operates on <strong>continuous-valued features</strong>, it assumes <strong>the examples within one-class are normally distributed</strong>. When extending for multiple predictors , LDA uses a multivariate Guassian Distribution for the class conditional density.  {the distribution of inputs &amp; how likely are each of the categories}</p>
-<p><strong>Naive Bayes</strong> is explicitly modeling the probability of a class using Bayes’s Rule and make the assumption that <strong>the features are independent</strong> instead.</p>
+<p><strong>Take an example</strong>: Two-class: we look for a projection where the same class are projected very close to each other and, at the same time, the projected means are as farther apart as possible. LDA is defined as a linear function $y = w^T x$ , to find the optimum $w^*$,In multi-class problem, we seek (C-1) projections $[y_1,y_2,…,y_{c-1}]$, $y_i = w_i^Tx$</p>
+<p>上面是对我上学期上pattern recognition的LDA的一个总结，看了斯坦福的LDA的PPT，感觉他们从另外一个角度来解释这个事情，也蛮好玩的。</p>
+<p>Instead of estimating $ P(Y|X)$ directly, we estimate $\hat P(X|Y)$: {given the response, the distribution of the inputs} and $\hat P(Y)$ {how likely are each of the categories} then we use Bayes rule to obtain the estimate</p>
+<p>$$ \hat P(Y=k | X= x) = \frac{\hat P(X= x|Y=k)\hat P(Y=k)}{\hat P(X=x)}$$</p>
+<p>$\hat P(X= x|Y=k) = \hat f_k(x)$ as multivariate normal distribution,{this means <strong>it assumes</strong> <strong>the examples within one-class are normally distributed</strong>. } $\hat P(Y=k) = \hat \pi_k$ as the likelihood of k-th category </p>
+<p><em>What is the difference between Naive Bayes and LDA?</em></p>
+<p><strong>LDA</strong> operates on <strong>continuous-valued features</strong>, it assumes <strong>the examples within one-class are normally distributed</strong>.<strong>Naive Bayes</strong> is explicitly modeling the probability of a class using Bayes’s Rule and make the assumption that <strong>the features are independent</strong> instead.</p>
 
       
     </div>
@@ -516,6 +518,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/24/SVM/" rel="prev" title="SVM">
+                SVM <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -591,7 +597,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
