@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="今天总结以前上学期pattern recognition学的PCA ^ ^Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature space becomes">
+<meta name="description" content="今天总结一下，上学期pattern recognition学的PCA ^ ^ 因为也确实蛮重要的。 Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature s">
 <meta name="keywords" content="行行找实习鸭">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PCA">
 <meta property="og:url" content="http://blog.hangcheers.cn/2019/06/23/PCA/index.html">
 <meta property="og:site_name" content="Hello,World">
-<meta property="og:description" content="今天总结以前上学期pattern recognition学的PCA ^ ^Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature space becomes">
+<meta property="og:description" content="今天总结一下，上学期pattern recognition学的PCA ^ ^ 因为也确实蛮重要的。 Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-23T12:31:41.261Z">
+<meta property="og:updated_time" content="2019-06-24T01:03:48.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PCA">
-<meta name="twitter:description" content="今天总结以前上学期pattern recognition学的PCA ^ ^Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature space becomes">
+<meta name="twitter:description" content="今天总结一下，上学期pattern recognition学的PCA ^ ^ 因为也确实蛮重要的。 Background of dimensionality reduction  Curse of Dimenisonality : (1) Keep adding features — the dimensionality of the feature space grows — feature s">
 
 
 
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-23T20:31:41+08:00">
-                2019-06-23
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-24T09:03:48+08:00">
+                2019-06-24
               </time>
             
           </span>
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  590
+                  729
                 </span>
               
 
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -443,7 +443,8 @@
       
 
       
-        <p>今天总结以前上学期pattern recognition学的PCA ^ ^<br><strong>Background of dimensionality reduction</strong></p>
+        <p>今天总结一下，上学期pattern recognition学的PCA ^ ^ 因为也确实蛮重要的。</p>
+<p><strong>Background of dimensionality reduction</strong></p>
 <ol>
 <li><p><strong>Curse of Dimenisonality</strong> : (1) Keep adding features — the dimensionality of the feature space grows — feature space becomes sparser —  it becomes much easier to find the perfect solution  —  overfitting — affect the predictability of the model —  the performance of model will decrease.  (2) Computational cost</p>
 </li>
@@ -451,7 +452,7 @@
 </li>
 <li><strong>Advantages</strong> : Visualization, Data Compression, Noise Removal</li>
 </ol>
-<p><u><strong>Mathematic Background:</strong></u></p>
+<p><strong>Mathematic Background:</strong></p>
 <ol>
 <li><p><strong>Variance</strong>:  Variance measures how spread the dataset is / how far each value in the dataset is from the mean. $$\sigma ^2 _x = var(x) = \sum (x_i - x_{mena})^2/N$$ </p>
 </li>
@@ -464,20 +465,26 @@
 <p>Eigen Decomposition:  $Ax = \lambda x$    $x$ is an eigenvector of A and $\lambda$ is the corresponding eigenvalue.</p>
 <p>We use Singular Value Decomposition (SVD) to decompose the covariance matrix then we can get eigenvalue and eigenvector. The eigenvectors are the unit vectors that represents <strong>the direction of the largest variance of the data</strong> while the eigenvalue represents <strong>the magnitude of this variance</strong> in the corresponding directions. The k-th largest eigenvalue of S is the variance of k-th PC.</p>
 </li>
-</ol>
-<p><strong><u>PCA:</u></strong> (it often used in feature engineering)</p>
-<ol>
-<li><p>Work-flow</p>
-<p>In ML problem, sometimes the features of our input are correlated. This means we include extra dimensions in our input data but we could convert the correlated features into orthogonal features to reduce the feature dimensionality. So we could also understand the correlation between new features is zero. So principal components is a set of values of linearly uncorrelated variables.</p>
-<p> PCA <strong>is based on the sample covariance</strong> ,  we compute the covariance matrix S ‘s eigenvector { <strong>the orthonormal basis for data,</strong> so each principal component orthogonal to all the previous ones}. <strong>Project the data to the orthonormal basis</strong> in this way we discard low significance dimensions, which greatly reduced the computational resources AND complexity.</p>
-<p>More specific, compute the PCs via SVD on <strong>the data centered data matrix</strong>. $$X_{d,n} = [(x_1 - \bar x),…,(x_n - \bar x)]$$  $$X_{d,n} = U_{d,d} D_{d,n} V_{n,n}^T$$ Then the first p eigenvectors forms  $$ G = [a_1, a_2, …. a_p]$$</p>
-<p>Project both training and testing data into the PCs space $$ y = G^T x$$ </p>
+<li><p><strong>Projection</strong>:</p>
+<p>矩阵子空间A, 被投影矩阵B, 则矩阵B投影到子空间A：$A^TB$</p>
 </li>
-<li><p>How much (the number of components in PCA) is good enough to decide the performance of the predictive modeling?</p>
+</ol>
+<p><strong>PCA:</strong> (it often used in feature engineering)</p>
+<ol>
+<li><p><strong>Work-flow</strong></p>
+<p>In ML problem, sometimes the features of our input are correlated. This means we include extra dimensions in our input data but we could <strong>convert the correlated features into orthogonal features</strong> to reduce the feature dimensionality. So we could also understand the correlation between new features is zero. So principal components is a set of values of linearly uncorrelated variables.</p>
+<p> PCA <strong>is based on the sample covariance</strong> ,  we compute the covariance matrix S ‘s eigenvector { <strong>the orthonormal basis for data,</strong> so each principal component orthogonal to all the previous ones}. <strong>Project the data to the orthonormal basis</strong> in this way we discard low significance dimensions, which greatly reduced the computational resources AND complexity. Because we donot know the label of dataset, so PCA is the unsupervised method. The criterial for good representation of <strong>unsupervised learning</strong> is to <strong>minimize information loss.</strong></p>
+<p>More specific, compute the PCs via SVD on <strong>the data centered data matrix</strong>. $$X_{d,n} = [(x_1 - \bar x),…,(x_n - \bar x)]$$  $$X_{d,n} = U_{d,d} D_{d,n} V_{n,n}^T$$ , $U,V$ are orthognal matrices, $D$ is a diagonal matrix. </p>
+<p>Then the first p eigenvectors forms  $$ G = [a_1, a_2, …. a_p]$$, Project both training and testing data into the PCs space $$ y = G^T x$$ </p>
+</li>
+<li><p><strong>Data Visualization</strong></p>
+<p>Data points are represented in the rotated orthogonal coordinate system. The origin is the mean of the data points and the axes are provided by the eigenvectors.</p>
+</li>
+<li><p><strong>How much (the number of components in PCA) is good enough to decide the performance of the predictive modeling?**</strong></p>
 <p>Decide a <strong><u>threshold (e.g. 0.95) of explained variance</u></strong>. If increasing one more principal components increases the explained variance by a large margin then go for it else stop it. Also check <strong><u>the accuracy of prediction with the included principal components.</u></strong> </p>
 </li>
-<li><p>In what situations is PCA not a good approach for dimensionality reduction?</p>
-<p>PCA is a <strong><u>linear transformation technique</u></strong>, if the features are non-linearly correlated.  PCA cannot capture non-linear structure.</p>
+<li><p><strong>In what situations is PCA not a good approach for dimensionality reduction?</strong></p>
+<p>PCA is a <strong><u>linear transformation technique</u></strong>, if the features are non-linearly correlated.  PCA cannot capture non-linear structure. Additionally, PCA is not always an optimal feature extraction procedure for classification problem. Suppose there are C classes in the training data, PCA ignores the class information.  The projection axes chosen by PCA might not provide good discriminant power.</p>
 </li>
 </ol>
 

@@ -6,7 +6,7 @@
   <link href="/atmol.xml" rel="self"/>
   
   <link href="http://blog.hangcheers.cn/"/>
-  <updated>2019-06-23T12:31:41.261Z</updated>
+  <updated>2019-06-24T01:03:48.126Z</updated>
   <id>http://blog.hangcheers.cn/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="http://blog.hangcheers.cn/2019/06/23/PCA/"/>
     <id>http://blog.hangcheers.cn/2019/06/23/PCA/</id>
     <published>2019-06-23T12:20:34.101Z</published>
-    <updated>2019-06-23T12:31:41.261Z</updated>
+    <updated>2019-06-24T01:03:48.126Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;今天总结以前上学期pattern recognition学的PCA ^ ^&lt;br&gt;&lt;strong&gt;Background of dimensionality reduction&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;今天总结一下，上学期pattern recognition学的PCA ^ ^ 因为也确实蛮重要的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Background of dimensionality reduction&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Curse of Dimenis
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;
       
     
     </summary>
